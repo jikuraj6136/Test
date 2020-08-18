@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm"  onsubmit="return validateForm()" method="POST">
+    <input type="text" name="firstname" />
+    <input type="checkbox" name="checkme" >
+    <input type="submit" name="namesubmit" value="submit" onclick="if(!this.form.checkme.checked){alert('You must tick the checkbox first.');return false}"  />
+</form>
+<script>
+    function validateForm(){
+        let x=document.forms["myForm"]["firstname"].value;
+        if(x==""){
+            alert("name must be filled");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
